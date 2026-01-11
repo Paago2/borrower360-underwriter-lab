@@ -1,0 +1,38 @@
+# .dockerignore
+
+# Python junk
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual envs
+.venv/
+venv/
+
+# Local IDE
+.vscode/
+.idea/
+
+# Data + generated artifacts (your project has large profiles + reports + parquet)
+data/
+profiles/
+reports/
+**/*.parquet
+**/*.csv
+**/*.jsonl
+
+# Notebooks (optional)
+notebooks/
+.ipynb_checkpoints/
+
+# Git
+.git/
+.github/
+
+# OS
+.DS_Store
+Thumbs.db

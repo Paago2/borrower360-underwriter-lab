@@ -98,4 +98,4 @@ mypy
 pre-commit 
 types-requests 
 types-tqdm
-rapidfuzz
+tooling>=0.1.0
