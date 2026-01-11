@@ -1,0 +1,33 @@
+{
+  "profile_version": 1,
+  "generated_at_utc": "2026-01-05T18:45:41.726505+00:00",
+  "dataset": {
+    "key": "fhfa_hpi_state",
+    "name": "fhfa_hpi_state",
+    "path": "/mnt/c/Users/paago/Documents/borrower360-underwriter-lab/data/00_raw/finance_housing/fhfa/hpi/fhfa_state_hpi.csv",
+    "type": "tabular",
+    "format": "csv",
+    "size_estimate": "KB–MB",
+    "license_terms_notes": "FHFA public data."
+  },
+  "exists": true,
+  "path": "/mnt/c/Users/paago/Documents/borrower360-underwriter-lab/data/00_raw/finance_housing/fhfa/hpi/fhfa_state_hpi.csv",
+  "type": "tabular",
+  "storage": {
+    "path": "/mnt/c/Users/paago/Documents/borrower360-underwriter-lab/data/00_raw/finance_housing/fhfa/hpi/fhfa_state_hpi.csv",
+    "exists": true,
+    "is_dir": false,
+    "size_bytes": 1906,
+    "size_human": "1.86 KB",
+    "mtime_utc": "2026-01-01T02:07:06.341985+00:00"
+  },
+  "tabular_profile": {
+    "format": "csv",
+    "size_bytes": 1906,
+    "size_human": "1.86 KB",
+    "sample_rows_requested": 20000,
+    "detected_delimiter": "','",
+    "error": "Sample read failed: ValueError: The 'low_memory' option is not supported with the 'python' engine",
+    "hint": "File may not be a standard CSV (could be pipe/tab delimited or have metadata lines)."
+  }
+}

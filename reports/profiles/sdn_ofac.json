@@ -1,0 +1,33 @@
+{
+  "profile_version": 1,
+  "generated_at_utc": "2026-01-05T18:45:11.706803+00:00",
+  "dataset": {
+    "key": "sdn_ofac",
+    "name": "sdn_ofac",
+    "path": "/mnt/c/Users/paago/Documents/borrower360-underwriter-lab/data/00_raw/compliance_sanctions/us_treasury_sdn/sdn.csv",
+    "type": "tabular",
+    "format": "csv",
+    "size_estimate": "5–20 MB (varies)",
+    "license_terms_notes": "OFAC SDN list is U.S. government data. Keep source + download date for auditability.\n"
+  },
+  "exists": true,
+  "path": "/mnt/c/Users/paago/Documents/borrower360-underwriter-lab/data/00_raw/compliance_sanctions/us_treasury_sdn/sdn.csv",
+  "type": "tabular",
+  "storage": {
+    "path": "/mnt/c/Users/paago/Documents/borrower360-underwriter-lab/data/00_raw/compliance_sanctions/us_treasury_sdn/sdn.csv",
+    "exists": true,
+    "is_dir": false,
+    "size_bytes": 5393718,
+    "size_human": "5.14 MB",
+    "mtime_utc": "2026-01-04T22:47:20.348213+00:00"
+  },
+  "tabular_profile": {
+    "format": "csv",
+    "size_bytes": 5393718,
+    "size_human": "5.14 MB",
+    "sample_rows_requested": 20000,
+    "detected_delimiter": "','",
+    "error": "Sample read failed: ValueError: The 'low_memory' option is not supported with the 'python' engine",
+    "hint": "File may not be a standard CSV (could be pipe/tab delimited or have metadata lines)."
+  }
+}

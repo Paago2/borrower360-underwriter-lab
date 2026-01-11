@@ -1,0 +1,99 @@
+# -----------------------------
+# Python / virtualenv
+# -----------------------------
+.venv/
+venv/
+ENV/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.cache/
+
+# -----------------------------
+# OS / editor
+# -----------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# -----------------------------
+# Secrets / local config
+# -----------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# -----------------------------
+# Jupyter
+# -----------------------------
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# -----------------------------
+# Logs / temp
+# -----------------------------
+*.log
+logs/
+tmp/
+temp/
+
+# -----------------------------
+# Data + artifacts (DO NOT COMMIT)
+# -----------------------------
+data/
+**/*.parquet
+**/*.csv
+**/*.jsonl
+**/*.ndjson
+**/*.arrow
+**/*.feather
+**/*.pkl
+**/*.pickle
+**/*.joblib
+
+# Documents / images often large
+**/*.pdf
+**/*.png
+**/*.jpg
+**/*.jpeg
+**/*.tif
+**/*.tiff
+
+# Model artifacts / ML
+**/*.pt
+**/*.pth
+**/*.onnx
+**/*.safetensors
+**/*.bin
+**/*.ckpt
+
+# Vector DB / local stores
+**/qdrant_storage/
+**/*.sqlite
+**/*.db
+
+# HuggingFace / datasets caches
+**/.huggingface/
+**/huggingface_cache/
+**/datasets_cache/
+**/.cache/huggingface/
+**/.cache/datasets/
+
+# -----------------------------
+# Build / dist
+# -----------------------------
+build/
+dist/
+*.egg-info/

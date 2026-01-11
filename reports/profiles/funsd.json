@@ -1,0 +1,65 @@
+{
+  "profile_version": 1,
+  "generated_at_utc": "2026-01-05T18:45:44.833945+00:00",
+  "dataset": {
+    "key": "funsd",
+    "name": "funsd",
+    "path": "/mnt/c/Users/paago/Documents/borrower360-underwriter-lab/data/00_raw/documents_ocr/funsd",
+    "type": "image",
+    "format": "images + json annotations",
+    "size_estimate": "200–500 MB",
+    "license_terms_notes": "Check FUNSD dataset license."
+  },
+  "exists": true,
+  "path": "/mnt/c/Users/paago/Documents/borrower360-underwriter-lab/data/00_raw/documents_ocr/funsd",
+  "type": "image",
+  "storage": {
+    "exists": true,
+    "is_dir": true,
+    "file_count": 400,
+    "total_size_bytes": 27779251,
+    "total_size_human": "26.49 MB",
+    "extensions": {
+      ".json": 199,
+      ".png": 199,
+      "(no_ext)": 2
+    },
+    "example_files": [
+      "testing_data/.DS_Store",
+      "testing_data/annotations/82092117.json",
+      "testing_data/annotations/82200067_0069.json",
+      "testing_data/annotations/82250337_0338.json",
+      "testing_data/annotations/82251504.json",
+      "testing_data/annotations/82252956_2958.json",
+      "testing_data/annotations/82253058_3059.json",
+      "testing_data/annotations/82253245_3247.json",
+      "testing_data/annotations/82253362_3364.json",
+      "testing_data/annotations/82254765.json",
+      "testing_data/annotations/82491256.json",
+      "testing_data/annotations/82504862.json",
+      "testing_data/annotations/82562350.json",
+      "testing_data/annotations/82573104.json",
+      "testing_data/annotations/82837252.json",
+      "testing_data/annotations/83443897.json",
+      "testing_data/annotations/83553333_3334.json",
+      "testing_data/annotations/83573282.json",
+      "testing_data/annotations/83594639.json",
+      "testing_data/annotations/83624198.json",
+      "testing_data/annotations/83635935.json",
+      "testing_data/annotations/83641919_1921.json",
+      "testing_data/annotations/83772145.json",
+      "testing_data/annotations/83823750.json",
+      "testing_data/annotations/83996357.json",
+      "testing_data/annotations/85201976.json",
+      "testing_data/annotations/85240939.json",
+      "testing_data/annotations/85540866.json",
+      "testing_data/annotations/85629964.json",
+      "testing_data/annotations/86075409_5410.json"
+    ]
+  },
+  "hints": {
+    "image_files_estimate": 199,
+    "json_files_estimate": 199,
+    "txt_files_estimate": 0
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "generated_at_utc": "2026-01-07T00:48:28.047237+00:00",
+  "project_root": "/mnt/c/Users/paago/Documents/borrower360-underwriter-lab",
+  "manifest_path": "/mnt/c/Users/paago/Documents/borrower360-underwriter-lab/configs/datasets.yaml",
+  "mode": "doc_index",
+  "max_items": 2000,
+  "results": [
+    {
+      "key": "freddie_mac_crt_2025_12",
+      "status": "ok",
+      "output_dir": "/mnt/c/Users/paago/Documents/borrower360-underwriter-lab/data/02_standardized/freddie_mac_crt_2025_12",
+      "rows_written": 129
+    }
+  ]
+}

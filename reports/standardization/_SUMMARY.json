@@ -1,0 +1,19 @@
+{
+  "generated_at_utc": "2026-01-09T12:37:18.742067+00:00",
+  "project_root": "/mnt/c/Users/paago/Documents/borrower360-underwriter-lab",
+  "manifest_path": "/mnt/c/Users/paago/Documents/borrower360-underwriter-lab/configs/datasets.yaml",
+  "contracts_path": "/mnt/c/Users/paago/Documents/borrower360-underwriter-lab/configs/contracts.yaml",
+  "results": [
+    {
+      "key": "lending_club",
+      "status": "ok",
+      "output_dir": "/mnt/c/Users/paago/Documents/borrower360-underwriter-lab/data/02_standardized/lending_club",
+      "rows_written": 10000,
+      "cols_written": 55,
+      "parts_written": 1,
+      "contract_applied": true,
+      "has_loan_id": false,
+      "has_property_state": false
+    }
+  ]
+}

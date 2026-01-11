@@ -1,0 +1,64 @@
+{
+  "profile_version": 1,
+  "generated_at_utc": "2026-01-05T18:48:26.461438+00:00",
+  "dataset": {
+    "key": "sroie",
+    "name": "sroie",
+    "path": "/mnt/c/Users/paago/Documents/borrower360-underwriter-lab/data/00_raw/sroie_receipts/SROIE2019",
+    "type": "mixed",
+    "format": "img + box + entities",
+    "size_estimate": "200–1000 MB",
+    "license_terms_notes": "Check SROIE dataset license."
+  },
+  "exists": true,
+  "path": "/mnt/c/Users/paago/Documents/borrower360-underwriter-lab/data/00_raw/sroie_receipts/SROIE2019",
+  "type": "mixed",
+  "storage": {
+    "exists": true,
+    "is_dir": true,
+    "file_count": 2919,
+    "total_size_bytes": 563175250,
+    "total_size_human": "537.09 MB",
+    "extensions": {
+      ".txt": 1946,
+      ".jpg": 973
+    },
+    "example_files": [
+      "test/box/X00016469670.txt",
+      "test/box/X00016469671.txt",
+      "test/box/X51005200931.txt",
+      "test/box/X51005230605.txt",
+      "test/box/X51005230616.txt",
+      "test/box/X51005230621.txt",
+      "test/box/X51005230648.txt",
+      "test/box/X51005230657.txt",
+      "test/box/X51005230659.txt",
+      "test/box/X51005268275.txt",
+      "test/box/X51005268408.txt",
+      "test/box/X51005288570.txt",
+      "test/box/X51005301666.txt",
+      "test/box/X51005337867.txt",
+      "test/box/X51005337877.txt",
+      "test/box/X51005361906.txt",
+      "test/box/X51005361908.txt",
+      "test/box/X51005361912.txt",
+      "test/box/X51005361923.txt",
+      "test/box/X51005365187.txt",
+      "test/box/X51005433518.txt",
+      "test/box/X51005433543.txt",
+      "test/box/X51005433548.txt",
+      "test/box/X51005433556.txt",
+      "test/box/X51005442322.txt",
+      "test/box/X51005442334.txt",
+      "test/box/X51005442343.txt",
+      "test/box/X51005442366.txt",
+      "test/box/X51005442375.txt",
+      "test/box/X51005442382.txt"
+    ]
+  },
+  "hints": {
+    "image_files_estimate": 973,
+    "json_files_estimate": 0,
+    "txt_files_estimate": 1946
+  }
+}

@@ -1,0 +1,158 @@
+version: 1
+
+contracts:
+
+  # ----------------------------
+  # FANNIE MAE (PIPE, NO HEADER)
+  # ----------------------------
+ 
+  fannie_mae_loan_performance_2025q1:
+    kind: csv
+    delimiter: "|"
+    header: false
+    encoding: "utf-8"
+
+    drop_if_all_null:
+      - col_001
+
+    rename:
+      col_002: loan_id
+      col_003: reporting_period_mmyyyy
+      col_014: origination_period_mmyyyy
+      col_015: maturity_period_mmyyyy
+      col_033: property_state
+
+    parse_mmyyyy:
+      - reporting_period_mmyyyy
+      - origination_period_mmyyyy
+      - maturity_period_mmyyyy
+
+    keep_as_string:
+      - loan_id
+      - property_state
+
+  fannie_mae_loan_performance_2025q2:
+    kind: csv
+    delimiter: "|"
+    header: false
+    encoding: "utf-8"
+
+    drop_if_all_null:
+      - col_001
+
+    rename:
+      col_002: loan_id
+      col_003: reporting_period_mmyyyy
+      col_014: origination_period_mmyyyy
+      col_015: maturity_period_mmyyyy
+      col_033: property_state
+
+    parse_mmyyyy:
+      - reporting_period_mmyyyy
+      - origination_period_mmyyyy
+      - maturity_period_mmyyyy
+
+    keep_as_string:
+      - loan_id
+      - property_state
+
+  # -------------
+  # HMDA
+  # -------------
+  hmda_2017_lar_labels:
+    kind: csv
+    delimiter: ","
+    header: true
+    encoding: "utf-8"
+
+  # -------------
+  # FHFA
+  # -------------
+  fhfa_hpi_city:
+    kind: csv
+    delimiter: ","
+    header: true
+    encoding: "utf-8"
+
+  fhfa_hpi_regional:
+    kind: csv
+    delimiter: ","
+    header: true
+    encoding: "utf-8"
+
+  fhfa_hpi_state:
+    kind: csv
+    delimiter: ","
+    header: true
+    encoding: "utf-8"
+
+  # -------------
+  # FEMA
+  # -------------
+  fema_housing_assistance_owners:
+    kind: csv
+    delimiter: ","
+    header: true
+    encoding: "utf-8"
+
+    # ----------------------------
+  # OFAC / SDN (NO HEADER FILES)
+  # ----------------------------
+  sdn_ofac:
+    kind: csv
+    delimiter: ","
+    header: false
+    encoding: "utf-8"
+    columns:
+      - uid
+      - name
+      - type
+      - country
+      - col_05
+      - col_06
+      - col_07
+      - col_08
+      - col_09
+      - col_10
+      - col_11
+      - remarks
+
+    keep_as_string:
+      - uid
+      - name
+      - type
+      - country
+      - remarks
+
+  consolidated_sdn:
+    kind: csv
+    delimiter: ","
+    header: false
+    encoding: "utf-8"
+    columns:
+      - uid
+      - name
+      - entity_type
+      - program
+      - col_05
+      - col_06
+      - col_07
+      - col_08
+      - col_09
+      - col_10
+      - col_11
+      - remarks
+
+    keep_as_string:
+      - uid
+      - name
+      - entity_type
+      - program
+      - remarks
+
+
+  lending_club:
+    kind: csv
+    delimiter: ","
+    header: true
+    encoding: "utf-8"

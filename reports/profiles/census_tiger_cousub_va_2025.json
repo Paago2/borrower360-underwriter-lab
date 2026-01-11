@@ -1,0 +1,46 @@
+{
+  "profile_version": 1,
+  "generated_at_utc": "2026-01-05T18:45:44.797927+00:00",
+  "dataset": {
+    "key": "census_tiger_cousub_va_2025",
+    "name": "census_tiger_cousub_va_2025",
+    "path": "/mnt/c/Users/paago/Documents/borrower360-underwriter-lab/data/00_raw/geo/census_tiger/2025/cousub/VA",
+    "type": "shapefile",
+    "format": "shp+shx+dbf+prj+cpg+xml",
+    "size_estimate": "10–100 MB (per layer)",
+    "license_terms_notes": "US Census TIGER/Line is public data."
+  },
+  "exists": true,
+  "path": "/mnt/c/Users/paago/Documents/borrower360-underwriter-lab/data/00_raw/geo/census_tiger/2025/cousub/VA",
+  "type": "shapefile",
+  "storage": {
+    "exists": true,
+    "is_dir": true,
+    "file_count": 7,
+    "total_size_bytes": 19804527,
+    "total_size_human": "18.89 MB",
+    "extensions": {
+      ".xml": 2,
+      ".cpg": 1,
+      ".dbf": 1,
+      ".prj": 1,
+      ".shp": 1,
+      ".shx": 1
+    },
+    "example_files": [
+      "tl_2025_51_cousub.cpg",
+      "tl_2025_51_cousub.dbf",
+      "tl_2025_51_cousub.prj",
+      "tl_2025_51_cousub.shp",
+      "tl_2025_51_cousub.shp.ea.iso.xml",
+      "tl_2025_51_cousub.shp.iso.xml",
+      "tl_2025_51_cousub.shx"
+    ]
+  },
+  "hints": {
+    "has_shp": true,
+    "has_dbf": true,
+    "has_shx": true,
+    "has_prj": true
+  }
+}

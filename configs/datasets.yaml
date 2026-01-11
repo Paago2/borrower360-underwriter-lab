@@ -1,0 +1,289 @@
+# configs/datasets.yaml
+version: 1
+project: borrower360-underwriter-lab
+
+defaults:
+  base_dir: "${PROJECT_ROOT}"
+  raw_root: "${PROJECT_ROOT}/data/00_raw"
+  curated_root: "${PROJECT_ROOT}/data/01_curated"
+  encoding: "utf-8"
+
+datasets:
+
+  # ============================================================
+  # 1) COMPLIANCE / SANCTIONS
+  # ============================================================
+
+  sdn_ofac:
+    name: "sdn_ofac"
+    path: "${raw_root}/compliance_sanctions/us_treasury_sdn/sdn.csv"
+    type: "tabular"
+    format: "csv"
+    size_estimate: "5–20 MB (varies)"
+    license_terms_notes: >
+      OFAC SDN list is U.S. government data. Keep source + download date for auditability.
+    primary_keys_or_join_keys:
+      - "uid (if present)"
+      - "name"
+      - "program"
+      - "country"
+    provenance:
+      source: "manual_drop or official OFAC download"
+      last_updated: "unknown"
+
+  consolidated_sdn:
+    name: "consolidated_sdn"
+    path: "${raw_root}/compliance_sanctions/us_treasury_sdn/consolidated_sdn.csv"
+    type: "tabular"
+    format: "csv"
+    size_estimate: "varies"
+    license_terms_notes: >
+      Derived file. Keep raw sources as the source of truth.
+    primary_keys_or_join_keys:
+      - "source_dataset"
+      - "source_entity_id"
+      - "name"
+    provenance:
+      source: "manual/derived"
+      last_updated: "unknown"
+
+  open_sanctions_debarment:
+    name: "open_sanctions_debarment"
+    path: "${raw_root}/compliance_sanctions/opensanctions/debarment.csv"
+    type: "tabular"
+    format: "csv"
+    size_estimate: "50–400 MB (depends on export)"
+    license_terms_notes: >
+      OpenSanctions is free for non-commercial use. Businesses must acquire a license.
+      Keep dataset version string if available.
+    primary_keys_or_join_keys:
+      - "id (entity id if present)"
+      - "name"
+      - "country"
+      - "dataset/source"
+    provenance:
+      source: "OpenSanctions bulk export (CSV)"
+      last_updated: "unknown"
+
+  # ============================================================
+  # 2) FINANCE / HOUSING
+  # ============================================================
+
+  hmda_2017_lar_labels:
+    name: "hmda_2017_lar_labels"
+    path: "${raw_root}/finance_housing/hmda/2017/hmda_2017_nationwide_first-lien-owner-occupied-1-4-family-records_labels.csv"
+    type: "tabular"
+    format: "csv"
+    size_estimate: "1–6 GB"
+    license_terms_notes: "HMDA is public-use data. Follow FFIEC/CFPB documentation."
+    primary_keys_or_join_keys:
+      - "lei (if present)"
+      - "state_code / county_code (if present)"
+      - "census_tract (if present)"
+    provenance:
+      source: "manual download"
+      last_updated: "unknown"
+
+  fhfa_hpi_city:
+    name: "fhfa_hpi_city"
+    path: "${raw_root}/finance_housing/fhfa/hpi/fhfa_city_hpi.csv"
+    type: "tabular"
+    format: "csv"
+    size_estimate: "KB–MB"
+    license_terms_notes: "FHFA public data."
+    primary_keys_or_join_keys:
+      - "city"
+      - "state"
+      - "year"
+      - "quarter_or_month"
+    provenance:
+      source: "manual download"
+      last_updated: "unknown"
+
+  fhfa_hpi_regional:
+    name: "fhfa_hpi_regional"
+    path: "${raw_root}/finance_housing/fhfa/hpi/fhfa_regional_hpi.csv"
+    type: "tabular"
+    format: "csv"
+    size_estimate: "KB–MB"
+    license_terms_notes: "FHFA public data."
+    primary_keys_or_join_keys:
+      - "region"
+      - "year"
+      - "quarter_or_month"
+    provenance:
+      source: "manual download"
+      last_updated: "unknown"
+
+  fhfa_hpi_state:
+    name: "fhfa_hpi_state"
+    path: "${raw_root}/finance_housing/fhfa/hpi/fhfa_state_hpi.csv"
+    type: "tabular"
+    format: "csv"
+    size_estimate: "KB–MB"
+    license_terms_notes: "FHFA public data."
+    primary_keys_or_join_keys:
+      - "state"
+      - "year"
+      - "quarter_or_month"
+    provenance:
+      source: "manual download"
+      last_updated: "unknown"
+
+  fema_housing_assistance_owners:
+    name: "fema_housing_assistance_owners"
+    path: "${raw_root}/finance_housing/fema/fema_HousingAssistanceOwners.csv"
+    type: "tabular"
+    format: "csv"
+    size_estimate: "10–500 MB (varies)"
+    license_terms_notes: >
+      FEMA data is generally public. Review columns for sensitive identifiers before curating.
+    primary_keys_or_join_keys:
+      - "disaster_number (if present)"
+      - "state"
+      - "county"
+    provenance:
+      source: "manual download"
+      last_updated: "unknown"
+
+  fannie_mae_loan_performance_2025q1:
+    name: "fannie_mae_loan_performance_2025q1"
+    path: "${raw_root}/finance_housing/fannie_mae/loan_performance/fannie_mae_2025Q1.csv"
+    type: "tabular"
+    format: "csv"
+    size_estimate: "100 MB–several GB"
+    license_terms_notes: "Subject to Fannie Mae data terms. Do not redistribute restricted data."
+    primary_keys_or_join_keys:
+      - "loan_id (if present)"
+      - "origination_date"
+      - "property_state"
+    provenance:
+      source: "manual download"
+      last_updated: "2025Q1"
+
+  fannie_mae_loan_performance_2025q2:
+    name: "fannie_mae_loan_performance_2025q2"
+    path: "${raw_root}/finance_housing/fannie_mae/loan_performance/fannie_mae_2025Q2.csv"
+    type: "tabular"
+    format: "csv"
+    size_estimate: "100 MB–several GB"
+    license_terms_notes: "Subject to Fannie Mae data terms."
+    primary_keys_or_join_keys:
+      - "loan_id (if present)"
+      - "origination_date"
+      - "property_state"
+    provenance:
+      source: "manual download"
+      last_updated: "2025Q2"
+
+  freddie_mac_crt_2025_12:
+    name: "freddie_mac_crt_2025_12"
+    path: "${raw_root}/finance_housing/freddie_mac/crt/2025-12"
+    type: "text"
+    format: "txt"
+    size_estimate: "hundreds of MB to multiple GB"
+    license_terms_notes: "Subject to Freddie Mac CRT terms. Keep file-layout documentation."
+    primary_keys_or_join_keys:
+      - "loan_sequence_number (if present)"
+      - "reporting_period"
+      - "deal/series identifiers (from filename)"
+    provenance:
+      source: "manual download"
+      last_updated: "2025-12"
+
+  # ============================================================
+  # 3) GEOSPATIAL
+  # ============================================================
+
+  census_tiger_cousub_va_2025:
+    name: "census_tiger_cousub_va_2025"
+    path: "${raw_root}/geo/census_tiger/2025/cousub/VA"
+    type: "shapefile"
+    format: "shp+shx+dbf+prj+cpg+xml"
+    size_estimate: "10–100 MB (per layer)"
+    license_terms_notes: "US Census TIGER/Line is public data."
+    primary_keys_or_join_keys:
+      - "GEOID (preferred, if present)"
+      - "STATEFP + COUNTYFP + COUSUBFP"
+      - "NAME"
+    provenance:
+      source: "manual download"
+      last_updated: "2025"
+
+  # ============================================================
+  # 4) DOCUMENT AI (OCR / IMAGES / QA)
+  # ============================================================
+
+  funsd:
+    name: "funsd"
+    path: "${raw_root}/documents_ocr/funsd"
+    type: "image"
+    format: "images + json annotations"
+    size_estimate: "200–500 MB"
+    license_terms_notes: "Check FUNSD dataset license."
+    primary_keys_or_join_keys:
+      - "document_id (filename stem)"
+      - "split"
+    provenance:
+      source: "manual download"
+      last_updated: "unknown"
+
+  docvqa:
+    name: "docvqa"
+    path: "${raw_root}/documents_ocr/docvqa"
+    type: "mixed"
+    format: "images + ocr_json + qas_json"
+    size_estimate: "GB-scale"
+    license_terms_notes: "DocVQA redistribution restrictions may apply. Keep citation + terms."
+    primary_keys_or_join_keys:
+      - "image_id"
+      - "question_id"
+    provenance:
+      source: "manual download"
+      last_updated: "unknown"
+
+  sroie:
+    name: "sroie"
+    path: "${raw_root}/sroie_receipts/SROIE2019"
+    type: "mixed"
+    format: "img + box + entities"
+    size_estimate: "200–1000 MB"
+    license_terms_notes: "Check SROIE dataset license."
+    primary_keys_or_join_keys:
+      - "receipt_id (filename stem)"
+      - "split"
+    provenance:
+      source: "kagglehub/manual"
+      last_updated: "unknown"
+
+  synthdog_en:
+    name: "synthdog_en"
+    path: "${raw_root}/synthdog_en"
+    type: "tabular"
+    format: "parquet"
+    size_estimate: "GB-scale"
+    license_terms_notes: "Check dataset card/license for naver-clova-ix/synthdog-en."
+    primary_keys_or_join_keys:
+      - "id (if present)"
+    provenance:
+      source: "huggingface snapshot_download"
+      last_updated: "unknown"
+
+  # ============================================================
+  # 5) MISC
+  # ============================================================
+
+  lending_club:
+    name: "lending_club"
+    path: "${raw_root}/misc/lending_club.csv"
+    type: "tabular"
+    format: "csv"
+    size_estimate: "MB–GB"
+    license_terms_notes: "Check dataset terms from your source."
+    primary_keys_or_join_keys:
+      - "id / member_id (if present)"
+      - "issue_d"
+      - "addr_state"
+    provenance:
+      source: "manual download"
+      last_updated: "unknown"

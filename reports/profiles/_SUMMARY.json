@@ -1,0 +1,110 @@
+{
+  "generated_at_utc": "2026-01-05T18:45:11.706783+00:00",
+  "project_root": "/mnt/c/Users/paago/Documents/borrower360-underwriter-lab",
+  "manifest_path": "/mnt/c/Users/paago/Documents/borrower360-underwriter-lab/configs/datasets.yaml",
+  "datasets_total": 17,
+  "profiles": [
+    {
+      "key": "sdn_ofac",
+      "exists": true,
+      "json": "reports/profiles/sdn_ofac.json",
+      "md": "reports/profiles/sdn_ofac.md"
+    },
+    {
+      "key": "consolidated_sdn",
+      "exists": true,
+      "json": "reports/profiles/consolidated_sdn.json",
+      "md": "reports/profiles/consolidated_sdn.md"
+    },
+    {
+      "key": "open_sanctions_debarment",
+      "exists": true,
+      "json": "reports/profiles/open_sanctions_debarment.json",
+      "md": "reports/profiles/open_sanctions_debarment.md"
+    },
+    {
+      "key": "hmda_2017_lar_labels",
+      "exists": true,
+      "json": "reports/profiles/hmda_2017_lar_labels.json",
+      "md": "reports/profiles/hmda_2017_lar_labels.md"
+    },
+    {
+      "key": "fhfa_hpi_city",
+      "exists": true,
+      "json": "reports/profiles/fhfa_hpi_city.json",
+      "md": "reports/profiles/fhfa_hpi_city.md"
+    },
+    {
+      "key": "fhfa_hpi_regional",
+      "exists": true,
+      "json": "reports/profiles/fhfa_hpi_regional.json",
+      "md": "reports/profiles/fhfa_hpi_regional.md"
+    },
+    {
+      "key": "fhfa_hpi_state",
+      "exists": true,
+      "json": "reports/profiles/fhfa_hpi_state.json",
+      "md": "reports/profiles/fhfa_hpi_state.md"
+    },
+    {
+      "key": "fema_housing_assistance_owners",
+      "exists": true,
+      "json": "reports/profiles/fema_housing_assistance_owners.json",
+      "md": "reports/profiles/fema_housing_assistance_owners.md"
+    },
+    {
+      "key": "fannie_mae_loan_performance_2025q1",
+      "exists": true,
+      "json": "reports/profiles/fannie_mae_loan_performance_2025q1.json",
+      "md": "reports/profiles/fannie_mae_loan_performance_2025q1.md"
+    },
+    {
+      "key": "fannie_mae_loan_performance_2025q2",
+      "exists": true,
+      "json": "reports/profiles/fannie_mae_loan_performance_2025q2.json",
+      "md": "reports/profiles/fannie_mae_loan_performance_2025q2.md"
+    },
+    {
+      "key": "freddie_mac_crt_2025_12",
+      "exists": true,
+      "json": "reports/profiles/freddie_mac_crt_2025_12.json",
+      "md": "reports/profiles/freddie_mac_crt_2025_12.md"
+    },
+    {
+      "key": "census_tiger_cousub_va_2025",
+      "exists": true,
+      "json": "reports/profiles/census_tiger_cousub_va_2025.json",
+      "md": "reports/profiles/census_tiger_cousub_va_2025.md"
+    },
+    {
+      "key": "funsd",
+      "exists": true,
+      "json": "reports/profiles/funsd.json",
+      "md": "reports/profiles/funsd.md"
+    },
+    {
+      "key": "docvqa",
+      "exists": true,
+      "json": "reports/profiles/docvqa.json",
+      "md": "reports/profiles/docvqa.md"
+    },
+    {
+      "key": "sroie",
+      "exists": true,
+      "json": "reports/profiles/sroie.json",
+      "md": "reports/profiles/sroie.md"
+    },
+    {
+      "key": "synthdog_en",
+      "exists": true,
+      "json": "reports/profiles/synthdog_en.json",
+      "md": "reports/profiles/synthdog_en.md"
+    },
+    {
+      "key": "lending_club",
+      "exists": true,
+      "json": "reports/profiles/lending_club.json",
+      "md": "reports/profiles/lending_club.md"
+    }
+  ]
+}
