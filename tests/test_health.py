@@ -1,10 +1,9 @@
 from fastapi.testclient import TestClient
 
 def test_health_ok():
-    from app.main import app  # change only if needed
+    from app.main import app
     client = TestClient(app)
     r = client.get("/health")
     assert r.status_code == 200
-    # Accept either {"status":"ok"} or a richer response
-    body = r.json()
-    assert "status" in body
+    assert "x-request-id" in r.headers
+    assert r.json().get("status") in ("ok", "ready")
