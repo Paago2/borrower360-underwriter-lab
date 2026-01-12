@@ -8,4 +8,5 @@ python-dotenv
 PyYAML
 pandas
 pyarrow
-
+langgraph
+openai
