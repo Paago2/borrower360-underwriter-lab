@@ -26,5 +26,7 @@ jobs:
       - name: Run tests
         env:
           API_KEY: dev-preview-key
+          PYTHONPATH: .
         run: |
           pytest -q
+
