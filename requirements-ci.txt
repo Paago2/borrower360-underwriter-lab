@@ -1,8 +1,11 @@
 fastapi
 uvicorn
-pydantic
+gunicorn
 httpx
 pytest
+pydantic>=2.7
 python-dotenv
+PyYAML
 pandas
 pyarrow
+
