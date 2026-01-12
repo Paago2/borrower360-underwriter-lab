@@ -5,6 +5,7 @@ import os
 from fastapi import HTTPException, Security, status
 from fastapi.security.api_key import APIKeyHeader
 
+
 # This defines the OpenAPI security scheme => Swagger gets an "Authorize" button.
 api_key_scheme = APIKeyHeader(name="X-API-Key", auto_error=False)
 

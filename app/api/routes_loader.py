@@ -4,8 +4,10 @@ from typing import List, Optional, Any, Dict
 
 from fastapi import APIRouter, HTTPException, Query
 
-from app.core.config import project_root
 from app.services.dataset_loader import load_dataset_df
+from app.core.paths import project_root
+
+root = project_root()
 
 router = APIRouter(tags=["loader"])
 

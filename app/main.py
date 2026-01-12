@@ -11,6 +11,9 @@ from app.api.routes_datasets import router as datasets_router
 from app.api.routes_preview import router as preview_router
 from app.api.routes_ready import router as ready_router
 from app.core.auth import require_api_key
+from app.api.routes_underwriter import router as underwriter_router
+
+
 
 # ----------------------------
 # Logging (structured JSON)
@@ -62,5 +65,6 @@ app.include_router(ready_router)
 # Protect data access endpoints with API key
 app.include_router(datasets_router, dependencies=[Depends(require_api_key)])
 app.include_router(preview_router, dependencies=[Depends(require_api_key)])
+app.include_router(underwriter_router, dependencies=[Depends(require_api_key)])
 
 

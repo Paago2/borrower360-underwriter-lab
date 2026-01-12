@@ -5,18 +5,20 @@ from typing import List
 
 from fastapi import APIRouter, HTTPException
 
-from app.core.config import project_root, manifest_path
 from app.schemas.datasets import DatasetOut
 from app.services.dataset_registry import load_registry, dataset_exists
+from app.core.config import manifest_path
+from app.core.paths import project_root
+
+root = project_root()
 
 router = APIRouter(tags=["datasets"])
 
 
 @lru_cache(maxsize=1)
 def _registry():
-    # NOTE: cached for speed. In case of edit configs/datasets.yaml while server is running,
-    # must restart (or remove lru_cache for dev).
-    return load_registry(manifest_path=manifest_path, project_root=project_root)
+    # NOTE: cached for speed. Restart server to pick up edits to configs/datasets.yaml
+    return load_registry(manifest_path=manifest_path, project_root=root)
 
 
 @router.get("/datasets", response_model=List[DatasetOut])

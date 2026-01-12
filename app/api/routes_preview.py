@@ -14,12 +14,16 @@ from fastapi.responses import FileResponse, StreamingResponse
 from app.core.auth import require_api_key
 from app.services.dataset_loader import load_dataset_df, resolve_dataset_location
 from app.services.storage import Storage, get_storage_settings
+from app.core.paths import project_root
+
+root = project_root()
+
 
 router = APIRouter(
     prefix="/preview",
     tags=["Preview"],
-    dependencies=[Depends(require_api_key)],
 )
+
 
 # ----------------------------
 # Helpers
