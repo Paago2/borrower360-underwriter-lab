@@ -1,0 +1,47 @@
+replicaCount: 1
+
+image:
+  repository: ""   # CI/CD will set: <acct>.dkr.ecr.<region>.amazonaws.com/borrower360-api
+  tag: "local"     # CI/CD will set: git sha
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8000
+
+env:
+  appModule: "app.main:app"
+  apiKey: "dev-preview-key"   # dev only; CI can override later
+  logLevel: "info"
+
+resources: {}
+
+readinessProbe:
+  path: /ready
+  initialDelaySeconds: 5
+  periodSeconds: 10
+
+livenessProbe:
+  path: /health
+  initialDelaySeconds: 10
+  periodSeconds: 15
+
+ingress:
+  enabled: false
+  className: "alb"
+  host: ""
+  annotations: {}
+
+hpa:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 70
+
+
+volumes:
+  data:
+    enabled: true
+    type: hostPath
+    hostPath: "/mnt/c/Users/paago/Documents/borrower360-underwriter-lab/data"
+    mountPath: "/app/data"
