@@ -44,3 +44,15 @@ spec:
             periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
           resources:
 {{- toYaml .Values.resources | nindent 12 }}
+
+
+        volumeMounts:
+        - name: data
+            mountPath: {{ .Values.volumes.data.mountPath | quote }}
+
+
+      volumes:
+        - name: data
+          hostPath:
+            path: {{ .Values.volumes.data.hostPath | quote }}
+            type: Directory
