@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: borrower360
+  namespace: borrower360
   labels:
     app: borrower360
 spec:
@@ -30,29 +31,36 @@ spec:
                 secretKeyRef:
                   name: borrower360-secrets
                   key: API_KEY
+
           readinessProbe:
             httpGet:
               path: {{ .Values.readinessProbe.path }}
               port: 8000
             initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
             periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
+
           livenessProbe:
             httpGet:
               path: {{ .Values.livenessProbe.path }}
               port: 8000
             initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
             periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
+
           resources:
 {{- toYaml .Values.resources | nindent 12 }}
 
+{{- if and .Values.volumes .Values.volumes.data .Values.volumes.data.enabled }}
+          volumeMounts:
+            - name: data
+              mountPath: {{ .Values.volumes.data.mountPath | quote }}
+{{- end }}
 
-        volumeMounts:
-        - name: data
-            mountPath: {{ .Values.volumes.data.mountPath | quote }}
-
-
+{{- if and .Values.volumes .Values.volumes.data .Values.volumes.data.enabled }}
       volumes:
         - name: data
+{{- if eq .Values.volumes.data.type "hostPath" }}
           hostPath:
             path: {{ .Values.volumes.data.hostPath | quote }}
             type: Directory
+{{- end }}
+{{- end }}
